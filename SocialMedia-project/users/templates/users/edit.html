@@ -1,0 +1,21 @@
+{% extends 'users/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    {% block body %}
+    <h2>Edit Profile form</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{user_form.as_p}}
+            {{profile_form.as_p}}
+            <input type="submit">
+        </form>
+    {% endblock %}
+</body>
+</html>
